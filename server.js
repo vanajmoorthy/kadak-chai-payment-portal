@@ -1,6 +1,3 @@
-// This is a public sample test API key.
-// Don’t submit any personally identifiable information in requests made with this key.
-// Sign in to see your own test API key embedded in code samples.
 require("dotenv").config();
 const stripe = require("stripe")(process.env.SECRET_KEY);
 const express = require("express");
@@ -18,7 +15,6 @@ app.post("/create-checkout-session", async (req, res) => {
 	const session = await stripe.checkout.sessions.create({
 		line_items: [
 			{
-				// Provide the exact Price ID (for example, pr_1234) of the product you want to sell
 				price: "price_1MS9wnIPGzg1rVnfWRXMH6Ml",
 				quantity: 1,
 			},
