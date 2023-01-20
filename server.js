@@ -5,7 +5,9 @@ const app = express();
 const path = require("path");
 app.use(express.static(path.join(__dirname, "public")));
 
-const YOUR_DOMAIN = "http://localhost:4242";
+const PORT = process.env.PORT || 4242;
+
+const YOUR_DOMAIN = `http://localhost:$PORT}`;
 
 app.get("/", (req, res) => {
 	res.render("./index.html");
@@ -27,4 +29,4 @@ app.post("/create-checkout-session", async (req, res) => {
 	res.redirect(303, session.url);
 });
 
-app.listen(4242, () => console.log("Running on port 4242"));
+app.listen(PORT, () => console.log(`Running on port ${PORT}`));
