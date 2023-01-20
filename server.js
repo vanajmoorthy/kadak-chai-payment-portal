@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = process.env.PORT || 4242;
 
-const YOUR_DOMAIN = `http://localhost:$PORT}`;
+const YOUR_DOMAIN = `http://localhost:${PORT}`;
 
 app.get("/", (req, res) => {
 	res.render("./index.html");
