@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kadak Chai</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <section>
+        <!-- <div class="product">
+            <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+            <div class="description">
+                <h3>Stubborn Attachments</h3>
+                <h5>$20.00</h5>
+            </div>
+        </div> -->
+        <header>
+
+            <h1>Kadak Chai</h1>
+            <h2>Authentic Indian Chai in St Andrews</h2>
+        </header>
+        <img src="./kadak-small.jpeg" alt="logo">
+
+        <form action="/create-checkout-session" method="POST">
+            <button class="button-50" type="submit" id="checkout-button">
+                <svg class="card" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                    <path
+                        d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 18V6h16l.001 12H4z">
+                    </path>
+                    <path
+                        d="M6.5 11h3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5zM6 14h6v2.001H6zm7 0h5v2.001h-5z">
+                    </path>
+                </svg> Pay</button>
+        </form>
+    </section>
+</body>
+
+</html>
