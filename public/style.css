@@ -101,6 +101,44 @@ button {
 	transform: translate(2px, 2px);
 }
 
+.counter {
+	width: 150px;
+	/* margin: auto; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.counter input {
+	width: 50px;
+	border: 0;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+	background: #000;
+	color: #fff;
+	appearance: none;
+	outline: 0;
+}
+.counter span {
+	display: block;
+	font-size: 25px;
+	/* padding: 1px 9px; */
+	cursor: pointer;
+	color: #fff;
+	user-select: none;
+	border: 1px solid white;
+	border-radius: 200px;
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hidden {
+	display: none;
+}
+
 @media (min-width: 768px) {
 	.button-50 {
 		padding: 12px 50px;

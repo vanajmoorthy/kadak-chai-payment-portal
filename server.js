@@ -8,6 +8,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const PORT = process.env.PORT || 4242;
 
 const YOUR_DOMAIN = `http://kadakchai.up.railway.app`;
+// const YOUR_DOMAIN = `http://localhost:${PORT}`;
 
 app.use(express.urlencoded());
 app.use(express.json());
@@ -17,10 +18,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/create-checkout-session", async (req, res) => {
+	console.log(req.body);
 	const session = await stripe.checkout.sessions.create({
 		line_items: [
 			{
-				price: "price_1MS9wnIPGzg1rVnfWRXMH6Ml",
+				price: "price_1MWJqZIPGzg1rVnfk2shRObR",
 				quantity: 1,
 			},
 		],
@@ -28,7 +30,6 @@ app.post("/create-checkout-session", async (req, res) => {
 		success_url: `${YOUR_DOMAIN}/success.html`,
 		cancel_url: `${YOUR_DOMAIN}`,
 	});
-
 	res.redirect(303, session.url);
 });
 
