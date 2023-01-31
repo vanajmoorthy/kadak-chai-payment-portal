@@ -18,12 +18,12 @@ app.get("/", (req, res) => {
 });
 
 app.post("/create-checkout-session", async (req, res) => {
-	console.log(req.body);
+	console.log(req.body.quantity);
 	const session = await stripe.checkout.sessions.create({
 		line_items: [
 			{
 				price: "price_1MWJqZIPGzg1rVnfk2shRObR",
-				quantity: 1,
+				quantity: req.body.quantity,
 			},
 		],
 		mode: "payment",
