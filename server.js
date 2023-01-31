@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 4242;
 
 const YOUR_DOMAIN = `http://kadakchai.up.railway.app`;
 
+app.use(express.urlencoded());
+app.use(express.json());
+
 app.get("/", (req, res) => {
 	res.render("./index.html");
 });
