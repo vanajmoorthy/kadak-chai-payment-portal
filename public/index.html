@@ -26,48 +26,52 @@
             <h2>Authentic Indian Chai in St Andrews</h2>
         </header>
         <img src="./kadak-small.jpeg" alt="logo">
-        <div class="counter">
-            <span class="down" onClick='decreaseCount(event, this)'>-</span>
-            <input id="quantity" type="text" value="1">
-            <span class="up" onClick='increaseCount(event, this)'>+</span>
-        </div>
-        <script type="text/javascript">
-            function increaseCount(a, b) {
-                var input = b.previousElementSibling;
-                var value = parseInt(input.value, 10);
-                value = isNaN(value) ? 0 : value;
-                value++;
-                input.value = value;
-                document.getElementById("quantity-to-send").value = document.getElementById("quantity").value;
-                console.log(document.getElementById("quantity-to-send").value);
-            }
-            function decreaseCount(a, b) {
-                var input = b.nextElementSibling;
-                var value = parseInt(input.value, 10);
-                if (value > 1) {
-                    value = isNaN(value) ? 0 : value;
-                    value--;
-                    input.value = value;
-                }
-                document.getElementById("quantity-to-send").value = document.getElementById("quantity").value;
-                console.log(document.getElementById("quantity-to-send").value);
-            }
-        </script>
-        <form action="/create-checkout-session" method="POST">
-            <input class="hidden" id="quantity-to-send" name="quantity" type="text" value="1">
 
-            <button class="button-50" type="submit" id="checkout-button">
-                <svg class="card" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
-                    <path
-                        d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 18V6h16l.001 12H4z">
-                    </path>
-                    <path
-                        d="M6.5 11h3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5zM6 14h6v2.001H6zm7 0h5v2.001h-5z">
-                    </path>
-                </svg> Pay</button>
-        </form>
+        <div class="form-wrapper">
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input id="quantity" type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+            </div>
+
+            <form action="/create-checkout-session" method="POST">
+                <input class="hidden" id="quantity-to-send" name="quantity" type="text" value="1">
+
+                <button class="button-50" type="submit" id="checkout-button">
+                    <svg class="card" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                        <path
+                            d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zM4 18V6h16l.001 12H4z">
+                        </path>
+                        <path
+                            d="M6.5 11h3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5zM6 14h6v2.001H6zm7 0h5v2.001h-5z">
+                        </path>
+                    </svg> Pay</button>
+            </form>
+        </div>
     </section>
+    <script type="text/javascript">
+        function increaseCount(a, b) {
+            var input = b.previousElementSibling;
+            var value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            input.value = value;
+            document.getElementById("quantity-to-send").value = document.getElementById("quantity").value;
+            console.log(document.getElementById("quantity-to-send").value);
+        }
+        function decreaseCount(a, b) {
+            var input = b.nextElementSibling;
+            var value = parseInt(input.value, 10);
+            if (value > 1) {
+                value = isNaN(value) ? 0 : value;
+                value--;
+                input.value = value;
+            }
+            document.getElementById("quantity-to-send").value = document.getElementById("quantity").value;
+            console.log(document.getElementById("quantity-to-send").value);
+        }
+    </script>
 </body>
 
 </html>

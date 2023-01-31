@@ -135,6 +135,14 @@ button {
 	justify-content: center;
 }
 
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 120px;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .hidden {
 	display: none;
 }
